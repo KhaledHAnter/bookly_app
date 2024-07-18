@@ -1,14 +1,21 @@
 import 'package:bookly_app/Core/utils/app_router.dart';
 import 'package:bookly_app/Core/utils/assets.dart';
 import 'package:bookly_app/Core/utils/styles.dart';
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/featured_list_view_item.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+  const BestSellerListViewItem({
+    super.key,
+    required this.bookModel,
+  });
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -20,18 +27,8 @@ class BestSellerListViewItem extends StatelessWidget {
         height: 125,
         child: Row(
           children: <Widget>[
-            AspectRatio(
-              aspectRatio: 2 / 3,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  image: const DecorationImage(
-                    image: AssetImage(AssetsData.testImage2),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            ),
+            FeaturedListViewItem(
+                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
             const Gap(30),
             Expanded(
               child: Column(
@@ -40,7 +37,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
-                      "Harry Potter and the Goblet of Fire",
+                      bookModel.volumeInfo.title,
                       style: Styles.textStyle20
                           .copyWith(fontFamily: kGtSectraFine),
                       maxLines: 2,
@@ -48,15 +45,15 @@ class BestSellerListViewItem extends StatelessWidget {
                     ),
                   ),
                   const Gap(3),
-                  const Text(
-                    "J.K. Rowling",
+                  Text(
+                    bookModel.volumeInfo.authors![0],
                     style: Styles.textStyle14,
                   ),
                   const Gap(3),
                   Row(
                     children: <Widget>[
                       Text(
-                        "19.99 €",
+                        "Free",
                         style: Styles.textStyle20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
