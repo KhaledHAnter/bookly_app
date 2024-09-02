@@ -1,24 +1,26 @@
-part of 'similar_books_cubit.dart';
+// part of 'similar_books_cubit.dart';
 
-abstract class SimilarBooksState extends Equatable {
-  const SimilarBooksState();
+// import 'package:bookly_app/Features/home/domain/entities/book_entity.dart';
 
-  @override
-  List<Object> get props => [];
-}
+// abstract class SimilarBooksState extends Equatable {
+//   const SimilarBooksState();
 
-class SimilarBooksInitial extends SimilarBooksState {}
+//   @override
+//   List<Object> get props => [];
+// }
 
-class SimilarBooksLoading extends SimilarBooksState {}
+// class SimilarBooksInitial extends SimilarBooksState {}
 
-class SimilarBooksSuccess extends SimilarBooksState {
-  final List<BookModel> books;
+// class SimilarBooksLoading extends SimilarBooksState {}
 
-  const SimilarBooksSuccess(this.books);
-}
+// class SimilarBooksSuccess extends SimilarBooksState {
+//   final List<BookEntity> books;
 
-class SimilarBooksFailure extends SimilarBooksState {
-  final String errMessage;
+//   const SimilarBooksSuccess(this.books);
+// }
 
-  const SimilarBooksFailure(this.errMessage);
-}
+// class SimilarBooksFailure extends SimilarBooksState {
+//   final String errMessage;
+
+//   const SimilarBooksFailure(this.errMessage);
+// }
