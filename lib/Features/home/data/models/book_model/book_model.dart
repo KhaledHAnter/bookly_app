@@ -1,5 +1,4 @@
 import 'package:bookly_app/Features/home/domain/entities/book_entity.dart';
-import 'package:equatable/equatable.dart';
 
 import 'access_info.dart';
 import 'sale_info.dart';
@@ -62,18 +61,4 @@ class BookModel extends BookEntity {
         'accessInfo': accessInfo?.toJson(),
         'searchInfo': searchInfo?.toJson(),
       };
-
-  @override
-  List<Object?> get props {
-    return [
-      kind,
-      id,
-      etag,
-      selfLink,
-      volumeInfo,
-      saleInfo,
-      accessInfo,
-      searchInfo,
-    ];
-  }
 }

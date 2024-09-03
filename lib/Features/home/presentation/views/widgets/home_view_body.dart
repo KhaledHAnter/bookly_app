@@ -1,7 +1,7 @@
 import 'package:bookly_app/Core/utils/styles.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_appbar.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/featured_books_list_view.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/featured_books_list_view_bloc_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
@@ -19,7 +19,7 @@ class HomeViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               CustomAppBar(),
-              FeaturedBooksListView(),
+              FeaturedBooksListViewBlocBuilder(),
               Gap(40),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24),
